@@ -1,0 +1,507 @@
+/* ===========================
+   Reset & Base
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  min-height: 100vh;
+  padding: 24px 16px 48px;
+}
+
+/* ===========================
+   Container
+=========================== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   Header & Balance Card
+=========================== */
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+
+.balance-card {
+  display: inline-block;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px 40px;
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.35);
+}
+
+.balance-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.balance-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ===========================
+   Card
+=========================== */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+/* ===========================
+   Main Layout
+=========================== */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ===========================
+   Form
+=========================== */
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+  background: #fff;
+}
+
+.form-group input.input-error,
+.form-group select.input-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-msg {
+  font-size: 0.78rem;
+  color: #ef4444;
+  min-height: 16px;
+}
+
+.btn-add {
+  margin-top: 4px;
+  padding: 12px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-add:hover {
+  opacity: 0.9;
+}
+
+.btn-add:active {
+  transform: scale(0.98);
+}
+
+/* ===========================
+   Transaction List
+=========================== */
+.list-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Custom scrollbar */
+.transaction-list::-webkit-scrollbar {
+  width: 4px;
+}
+.transaction-list::-webkit-scrollbar-track {
+  background: #f0f2f5;
+  border-radius: 4px;
+}
+.transaction-list::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 4px;
+}
+
+/* Transaction item */
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9ff;
+  border: 1px solid #eef0ff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  gap: 10px;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.transaction-amount {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.category-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.badge-food     { background: #fef3c7; color: #d97706; }
+.badge-transport{ background: #dbeafe; color: #2563eb; }
+.badge-fun      { background: #fce7f3; color: #db2777; }
+
+.btn-delete {
+  flex-shrink: 0;
+  background: none;
+  border: 1.5px solid #fca5a5;
+  color: #ef4444;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-delete:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* ===========================
+   Empty State
+=========================== */
+.empty-state {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ===========================
+   Chart
+=========================== */
+.chart-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.chart-wrapper canvas {
+  max-width: 100%;
+  max-height: 260px;
+}
+
+#chart-empty-state {
+  display: none;
+}
+
+/* ===========================
+   Chart.js tooltip — pastikan tidak visible saat pertama kali muncul
+   sebelum ada interaksi user (Chart.js menginjeksikan elemen ini ke body)
+=========================== */
+#chartjs-tooltip {
+  pointer-events: none;
+}
+
+/* ===========================
+   Responsive — Tablet & Mobile
+=========================== */
+@media (max-width: 640px) {
+  body {
+    padding: 16px 12px 40px;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  .balance-card {
+    padding: 16px 28px;
+  }
+
+  .balance-amount {
+    font-size: 1.6rem;
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-list {
+    max-height: 260px;
+  }
+}
+
+/* ===========================
+   Theme Toggle Button
+=========================== */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.theme-toggle:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   Sort Select (list header)
+=========================== */
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f2f5;
+  gap: 12px;
+}
+
+.list-header h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+#sort-select {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+  background: #f0f2f5;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+#sort-select:focus {
+  border-color: #4f46e5;
+}
+
+/* ===========================
+   Amount Warning (> Rp 200.000)
+=========================== */
+.amount-warning {
+  color: #ef4444 !important;
+  font-weight: 700;
+}
+
+/* ===========================
+   Dark Mode
+=========================== */
+body.dark-mode {
+  background-color: #0f0f1a;
+  color: #e2e8f0;
+}
+
+/* Container tidak perlu diubah — dia transparan */
+
+body.dark-mode .theme-toggle {
+  background: #1e1e2e;
+  border-color: #3a3a5c;
+  color: #e2e8f0;
+}
+
+body.dark-mode .card {
+  background: #1e1e2e;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .card h2 {
+  color: #e2e8f0;
+  border-bottom-color: #2a2a3e;
+}
+
+body.dark-mode .header h1 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .form-group label {
+  color: #a0aec0;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select {
+  background: #2a2a3e;
+  border-color: #3a3a5c;
+  color: #e2e8f0;
+}
+
+body.dark-mode .form-group input::placeholder {
+  color: #5a5a7a;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group select:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+  background: #2e2e48;
+}
+
+body.dark-mode .transaction-item {
+  background: #2a2a3e;
+  border-color: #3a3a5c;
+}
+
+body.dark-mode .transaction-name {
+  color: #e2e8f0;
+}
+
+body.dark-mode .transaction-amount {
+  color: #a78bfa;
+}
+
+body.dark-mode .empty-state {
+  color: #5a5a7a;
+}
+
+body.dark-mode .list-header {
+  border-bottom-color: #2a2a3e;
+}
+
+body.dark-mode #sort-select {
+  background: #2a2a3e;
+  border-color: #3a3a5c;
+  color: #a0aec0;
+}
+
+body.dark-mode .transaction-list::-webkit-scrollbar-track {
+  background: #1e1e2e;
+}
+
+body.dark-mode .transaction-list::-webkit-scrollbar-thumb {
+  background: #4a4a6a;
+}
